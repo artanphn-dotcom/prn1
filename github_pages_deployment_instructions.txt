@@ -1,0 +1,33 @@
+I have configured your project for deployment to GitHub Pages.
+
+Here are the final steps you need to take:
+
+1.  **Install `gh-pages`:**
+    If you haven't already, install the `gh-pages` package globally or locally in your project:
+    ```bash
+    npm install gh-pages --save-dev
+    # or
+    yarn add gh-pages --dev
+    ```
+    (Note: I've already added it to your `package.json`, so a simple `npm install` or `yarn install` should suffice if you re-run it.)
+
+2.  **Run the deployment script:**
+    Execute the deploy script from your project's root directory:
+    ```bash
+    npm run deploy
+    # or
+    yarn deploy
+    ```
+    This command will:
+    -   Run the `predeploy` script (which is `npm run build`). This will create a `dist` folder with your optimized production build.
+    -   Push the contents of the `dist` folder to a `gh-pages` branch on your GitHub repository.
+
+3.  **Configure GitHub Pages in your repository settings:**
+    -   Go to your GitHub repository on `https://github.com/artanphn-dotcom/prn1`.
+    -   Navigate to `Settings` -> `Pages`.
+    -   Under 'Build and deployment', select 'Deploy from a branch'.
+    -   For 'Branch', select the `gh-pages` branch and click 'Save'.
+
+    GitHub Pages will then build and deploy your site. It might take a few minutes for the changes to become live. Your application will typically be accessible at `https://artanphn-dotcom.github.io/prn1/`.
+
+Let me know if you have any further questions or need assistance with these steps.

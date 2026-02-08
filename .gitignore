@@ -1,16 +1,84 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 
-node_modules
-dist
-dist-ssr
-*.local
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a PyInstaller script
+#  in a top-level directory.
+#  In that case, feel free to uncomment this part and adjust the paths as necessary.
+#*.spec
+#
+# PyInstaller BUNDLE directly
+#dist/
+#  PyInstaller BUNDLE in a subdirectory
+#dist */
+
+# Flask stuff
+instance/
+.webassets-cache
+
+# Scrapy stuff
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+#   For a library or package, you might want to ignore these files since the code is
+#   intended to run in multiple environments; otherwise, check them in:
+# .python-version
+
+# venv
+.venv/
+venv/
+VENV/
+env.bak/
+venv.bak/
+
+# Environments
+.env
+.flaskenv
+env
+.env.prod
+.env.dev
+
+# Database
+db.json
 
 # Editor directories and files
 .vscode/*
@@ -21,4 +89,4 @@ dist-ssr
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
+*.sw?node_modules/

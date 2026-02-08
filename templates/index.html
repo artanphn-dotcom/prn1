@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Apartment Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-gray-100 antialiased transition-colors duration-200">
+    <div id="app" class="flex">
+        <!-- Sidebar will be injected here -->
+        <nav id="sidebar" class="w-64 bg-white dark:bg-slate-800 p-4 space-y-2">
+            <h1 class="text-2xl font-bold mb-4">Apartment App</h1>
+            <a href="#" class="block p-2 rounded hover:bg-gray-200 dark:hover:bg-slate-700">Dashboard</a>
+            <a href="#" class="block p-2 rounded hover:bg-gray-200 dark:hover:bg-slate-700">Apartments</a>
+            <a href="#" class="block p-2 rounded hover:bg-gray-200 dark:hover:bg-slate-700">Tenants</a>
+            <a href="#" class="block p-2 rounded hover:bg-gray-200 dark:hover:bg-slate-700">Finance</a>
+            <a href="#" class="block p-2 rounded hover:bg-gray-200 dark:hover:bg-slate-700">Documents</a>
+        </nav>
+
+        <!-- Main content area -->
+        <main id="main-content" class="flex-1 p-8">
+            <h2 class="text-3xl font-semibold mb-6">Dashboard</h2>
+            <!-- Content will be dynamically loaded here -->
+            <div id="content-area">
+                <p>Loading...</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

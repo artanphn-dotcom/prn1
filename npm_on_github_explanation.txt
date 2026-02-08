@@ -1,0 +1,36 @@
+It sounds like there might be some confusion about where `npm` commands are executed in the deployment process. Let me clarify:
+
+You **do not** run `npm` commands directly "on GitHub" or on GitHub Pages. GitHub Pages is a static site hosting service, meaning it only serves static files (HTML, CSS, JavaScript, images) that have already been built. It doesn't have the capability to run server-side processes or build tools like `npm`.
+
+Here's a breakdown of how the process works and where `npm` commands fit in:
+
+1.  **Local Development Machine (Your Computer):**
+    *   This is where you write your code.
+    *   This is where you have Node.js and `npm` (or `yarn`) installed.
+    *   You run commands like `npm install` (to install dependencies), `npm run dev` (to run your development server), and `npm run build` (to compile your project into optimized static files for production) **on your local machine**.
+
+2.  **The `dist` Folder (Output of `npm run build`):**
+    *   When you run `npm run build` locally, Vite processes your React application and outputs a folder (usually named `dist`) containing all the production-ready static assets (HTML, CSS, JavaScript, etc.).
+
+3.  **GitHub Repository:**
+    *   This is where your project's source code lives (e.g., your `main` branch).
+    *   When you commit and push your changes, you're pushing your source code (`.tsx`, `.css`, `package.json`, etc.) to this repository.
+
+4.  **`gh-pages` Package and `npm run deploy`:**
+    *   The `gh-pages` package, which we added to your `package.json`, is a utility that automates pushing the *contents of your `dist` folder* to a special branch on your GitHub repository, typically named `gh-pages`.
+    *   When you run `npm run deploy` **locally**:
+        *   It first executes `npm run build` (as defined in your `predeploy` script in `package.json`).
+        *   Then, it takes the newly created `dist` folder and pushes its *contents* to the `gh-pages` branch on your GitHub repository.
+
+5.  **GitHub Pages Hosting:**
+    *   Once the `dist` folder's contents are on the `gh-pages` branch, GitHub Pages serves these static files to the web.
+    *   When a user visits your GitHub Pages URL (e.g., `https://artanphn-dotcom.github.io/prn1/`), GitHub Pages simply delivers the `index.html`, `index.css`, `index.js`, etc., files from that `gh-pages` branch. It does not run any `npm` commands at this stage.
+
+**In summary: You perform all `npm`-related build and deployment steps on your local computer, and GitHub Pages simply hosts the static output of that build.**
+
+So, to ensure your latest changes (including the `index.html` fixes) are live on GitHub Pages, you need to:
+
+1.  **Ensure you have committed and pushed any local changes** to your `main` branch (this is good practice, but not strictly necessary for `gh-pages` deployment itself, as `gh-pages` pushes the `dist` folder directly).
+2.  **Run `npm run deploy` on your local machine.** This command will trigger the build and then push the built `dist` folder to your `gh-pages` branch on GitHub.
+
+After these steps, GitHub Pages will automatically update and serve the new version of your application."

@@ -1,0 +1,9 @@
+A white page usually indicates that the application's assets (JavaScript, CSS) are not loading correctly, or there's an error preventing the application from initializing.
+
+To help me diagnose this, please provide the following information:
+
+1.  **The exact URL** where you are seeing the white page.
+2.  **Any errors displayed in your browser's developer console.** (To open: Right-click on the white page -> `Inspect` or `Inspect Element` -> Go to the `Console` tab).
+3.  **Any failed requests in your browser's network tab.** (In the same developer tools window, go to the `Network` tab and refresh the page. Look for any requests marked in red or with a failed status).
+
+Also, please double-check that you have correctly configured GitHub Pages in your repository settings, as described in `github_pages_deployment_instructions.txt`, specifically ensuring that the `gh-pages` branch is selected for deployment. If you just pushed the changes, it might take a few minutes for GitHub Pages to deploy the new build.
